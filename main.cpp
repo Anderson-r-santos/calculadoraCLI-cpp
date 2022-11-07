@@ -8,29 +8,30 @@ std::string calcula_2_numeros_inteiros(int num1,int num2,char characterDaOperaca
     std::string resultado = " ";
     
     resultado += std::to_string(num1) + " ";
-    resultado += characterDaOperacao;
+    resultado += characterDaOperacao + " ";
     resultado +=  std::to_string(num2);
 
+    //std::cout<<"era pro resutado ser "<<resultado<<"\n";
     switch (characterDaOperacao)
     {
         case '+':
-            resultado = num1 + num2;
+            resultado += std::to_string(num1 + num2);
             break;
         
         case '-':
-            resultado = num1 - num2;
+            resultado += std::to_string(num1 - num2);
             break;
         
         case '*':
-        resultado = num1 * num2;
+            resultado += std::to_string(num1 * num2);
         break;
         
         case '/':
-            resultado = num1 / num2;
+            resultado += std::to_string(num1 / num2);
             break;
         
         default:
-            resultado = operacaoInvalida;
+            resultado += operacaoInvalida;
             break;
     }
     return resultado;
@@ -49,7 +50,7 @@ int main()
     std::cin>>operacao;
 
     std::cout<<"Digite o segundo numero :\n";
-    
+
     std::cin>>number2;
 
 
