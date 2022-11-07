@@ -2,6 +2,8 @@
 #include <string>
 #include <sstream>
 
+
+
 std::string calcula_2_numeros_inteiros(int num1,int num2,const char * characterDaOperacao)
 {
     const std::string operacaoInvalida = "operacao invalida\n";
@@ -14,7 +16,7 @@ std::string calcula_2_numeros_inteiros(int num1,int num2,const char * characterD
     switch (characterDaOperacao[0])
     {
         case '+':
-            resultado += std::to_string(int(num1 + num2));
+            resultado += std::to_string(num1 + num2);
             break;
         
         case '-':
@@ -40,23 +42,41 @@ int main()
 {
     std::string number1,number2;
     std::string operacao;
+    bool exit = false;
 
-    std::cout<<"Digite um numero :\n";
+    while (!exit)
+    {
 
-    std::getline(std::cin, number1);
+        std::cout<<"\n\nDigite um numero :\n";
 
+        std::getline(std::cin, number1);
 
-    std::cout<<"Digite o operando :\n";
+        if(number1 == "exit")
+        {
+            return 0;
+        }
 
-    std::getline(std::cin, operacao);
+        std::cout<<"Digite o operando :\n";
 
+        std::getline(std::cin, operacao);
 
-    std::cout<<"Digite o segundo numero :\n";
+        if(operacao == "exit")
+        {
+            return 0;
+        }
+        std::cout<<"Digite o segundo numero :\n";
 
-    std::getline(std::cin, number2);
+        std::getline(std::cin, number2);
 
+        if(number2 == "exit")
+        {
+            return 0;
+        }
 
-    std::cout<<"o resultado de " << calcula_2_numeros_inteiros(std::stoi(number1),std::stoi(number2),operacao.c_str())<<"\n";
+        std::cout<<"o resultado de " << calcula_2_numeros_inteiros(std::stoi(number1),std::stoi(number2),operacao.c_str())<<"\n";
+    }
+    
+  
 
 
     return 0;
