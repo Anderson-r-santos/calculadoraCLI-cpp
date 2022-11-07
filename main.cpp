@@ -46,7 +46,7 @@ int main()
 
     while (!exit)
     {
-
+        std::cout<<"\n*** Digite 'exit' a qualquer momento para sair *****\n";
         std::cout<<"\n\nDigite um numero :\n";
 
         std::getline(std::cin, number1);
